@@ -27,6 +27,11 @@ int main()
     }
 
     while (getline(studentDataFile, studentDataLine)) {
+        // print each line, only if in debug mode
+        #ifdef _DEBUG
+            cout << studentDataLine << endl;
+        #endif // DEBUG
+
         // find the index of the comma
         size_t commaIndex = studentDataLine.find(',');
         if (commaIndex != string::npos) {
